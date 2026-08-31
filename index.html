@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Clone</title>
+    <meta
+      name="description"
+      content="Clone da página principal do YouTube em HTML, CSS e JavaScript puro."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="sidebar-hidden">
+    <div class="app-shell">
+      <header class="topbar" aria-label="Barra de navegação superior">
+        <div class="topbar__left">
+          <button class="icon-button" id="menuToggle" aria-label="Abrir menu">
+            <span class="menu-icon" aria-hidden="true"></span>
+          </button>
+
+          <div class="brand" aria-label="YouTube logo e marca">
+            <div class="brand__logo" aria-hidden="true">
+              <span class="brand__play"></span>
+            </div>
+            <span class="brand__name">YouTube</span>
+            <span class="brand__country">C</span>
+          </div>
+        </div>
+
+        <div class="topbar__center">
+          <label class="search-bar" aria-label="Campo de busca">
+            <input type="text" value="" placeholder="Pesquisar" />
+            <button class="search-button" aria-label="Pesquisar">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10 2a8 8 0 015.95 13.31l4.39 4.39 1.41-1.41-4.39-4.39A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/>
+              </svg>
+            </button>
+          </label>
+
+          <button class="icon-button mic-button" aria-label="Pesquisar por voz">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 15a3 3 0 003-3V7a3 3 0 10-6 0v5a3 3 0 003 3zm5-3a5 5 0 11-10 0H5a7 7 0 0014 0h-2zm-5 7a7 7 0 01-7-7h2a5 5 0 0010 0h2a7 7 0 01-7 7z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="topbar__right">
+          <button class="create-button" aria-label="Criar">
+            <span class="create-button__plus">+</span>
+            Criar
+          </button>
+
+          <button class="icon-button notification-button" aria-label="Notificações">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22a2.5 2.5 0 002.45-2h-4.9A2.5 2.5 0 0012 22zm7-6V11a7 7 0 10-14 0v5l-2 2v1h18v-1l-2-2zm-2 1H7v-6a5 5 0 0110 0v6z"/>
+            </svg>
+            <span class="notification-badge">9+</span>
+          </button>
+
+          <button class="avatar" aria-label="Perfil do usuário">Z</button>
+        </div>
+      </header>
+
+      <div class="main-layout">
+        <aside class="sidebar" aria-label="Menu lateral">
+          <nav class="nav-section">
+            <button class="nav-item active">
+              <span class="nav-icon home"></span>
+              <span>Início</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-icon shorts"></span>
+              <span>Shorts</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-icon subscriptions"></span>
+              <span>Inscrições</span>
+            </button>
+          </nav>
+
+          <div class="divider"></div>
+
+          <nav class="nav-section">
+            <button class="nav-item">
+              <span class="nav-icon library"></span>
+              <span>Biblioteca</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-icon history"></span>
+              <span>Histórico</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-icon videos"></span>
+              <span>Seus vídeos</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-icon watch"></span>
+              <span>Assistir mais tarde</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-icon like"></span>
+              <span>Vídeos marcados com gostei</span>
+            </button>
+          </nav>
+        </aside>
+
+        <main class="main-content">
+          <section class="video-panel" aria-label="Player do vídeo principal">
+            <div class="video-player" aria-label="Vídeo principal">
+              <iframe
+                id="videoFrame"
+                src="https://www.youtube.com/embed/8BQR-E-P0pc?rel=0&modestbranding=1"
+                title="Vídeo da DIO"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+
+              <div class="video-player__content">
+                <button class="video-player__play" id="playVideo" aria-label="Assistir vídeo">▶</button>
+                <div class="video-player__info">
+                  <div class="video-player__chip">DIO</div>
+                  <div class="video-player__meta">
+                    <p class="video-player__text">A Digital Innovation One agora é Dio.me, É tech. É pra dev. É conhecimento que faz acontecer.</p>
+                    <a href="#" aria-label="Canal DIO">DIO</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-details">
+              <h1>Semana Front-end | Dia 01: Construindo uma Landing Page no Mundo Invertido com HTML e CSS</h1>
+
+              <div class="video-meta-row">
+                <div class="channel-summary">
+                  <div class="channel-logo">D</div>
+                  <div class="channel-copy">
+                    <strong>DIO</strong>
+                    <span>83,3 mil inscritos</span>
+                  </div>
+                </div>
+
+                <button class="subscribe-button">inscreva-se</button>
+
+                <div class="reactions">
+                  <button class="reaction" aria-label="Curtir">
+                    <span class="reaction__icon like"></span>
+                    <span>2 mil</span>
+                  </button>
+                  <button class="reaction" aria-label="Não gostei">
+                    <span class="reaction__icon dislike"></span>
+                    <span>Não gostei</span>
+                  </button>
+                  <button class="reaction" aria-label="Compartilhar">
+                    <span class="reaction__icon share"></span>
+                    <span>Compartilhar</span>
+                  </button>
+                  <button class="reaction" aria-label="Download">
+                    <span class="reaction__icon download"></span>
+                    <span>Download</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="stats-box">
+                <p class="stats-box__line">28.418 visualizações &nbsp;•&nbsp; Transmitido ao vivo em 23 ago. de 2022</p>
+                <p class="stats-box__desc">
+                  Inicie uma aventura imersiva no mundo do Front-end com HTML e CSS. Para isso,
+                  criaremos uma landing page com a temática da série Stranger Things, a qual contará
+                  com a implementação de um theme switcher (light e dark) para explorarmos os mistérios
+                  do mundo invertido.
+                </p>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <aside class="playlist" aria-label="Lista de vídeos sugeridos">
+          <div class="playlist__list" id="videoList"></div>
+        </aside>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
